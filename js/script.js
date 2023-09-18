@@ -27,19 +27,38 @@ buttonGenerator.addEventListener('click', function(){
   const contenitore = document.querySelector('.container')
   contenitore.classList.remove('display-none')
 
+  contenitore.innerHTML = '';
+
   // 4.
   for (let i = 1; i <= 100; i++) {
     // 5.
-    const square = createSquare();
-    console.log(square)
+    const square = createSquare(i);
+    
+    // 6.
+    square.addEventListener('click', function(){
+      // determino se l'indice è pari o dispari
+      const oddEven = i % 2 === 0 ? 'even' : 'odd';
+
+      // 7.
+      this.classList.toggle('clicked')
+      this.classList.toggle(oddEven)
+      console.log(this)
+      console.log(i)
+    })
 
     // 8.
-    contenitore.appendChild(square);
-  }
-
-  function createSquare() {
-    const newSquare = document.createElement('div')
-    newSquare.classList.add('square')
-    return newSquare;
+    contenitore.append(square);
   }
 })
+
+/************FUNZIONI************/ 
+function createSquare(index) {
+  const newSquare = document.createElement('div');
+  newSquare.className = 'square';
+  
+  newSquare.innerHTML = `<span>${index}</span>`;
+  return newSquare;
+}
+
+
+

@@ -36,7 +36,34 @@ button {
 }
 
 .square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: calc(100% / 10);
   aspect-ratio: 1 / 1;
-  border: 2px solid black;
+  background-color: brown;
+  color: white;
+  font-size: 24px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+.square span {
+  display: none;
+}
+
+.clicked {
+  background-color: cadetblue;
+}
+
+.square.clicked span {
+  display: block;
+}
+
+.square.clicked.odd {
+  background-color: coral;
+}
+
+
+.square.clicked.even {
+  background-color: darkcyan;
 }
