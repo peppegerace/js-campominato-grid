@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: cadetblue;
+}
+
+
+button {
+  padding: 10px 40px;
+  background-color: green;
+  color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  height: 600px;
+}
+
+.display-none {
+  display: none;
+}
+
+.square {
+  width: calc(100% / 10);
+  aspect-ratio: 1 / 1;
+  border: 2px solid black;
+}
