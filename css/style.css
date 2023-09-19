@@ -8,13 +8,21 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: cadetblue;
 }
 
+header {
+  background-color: white;
+  height: 90px;
+  z-index: 999;
+}
 
-button {
+main {
+  height: calc(100% - 90px);
+}
+
+
+.btn-custom {
   padding: 10px 40px;
   background-color: green;
   color: white;
@@ -24,7 +32,7 @@ button {
   margin-bottom: 20px;
 }
 
-.container {
+.game-wrapper {
   display: flex;
   flex-wrap: wrap;
   width: 600px;
@@ -66,4 +74,16 @@ button {
 
 .square.clicked.even {
   background-color: darkcyan;
+}
+
+.square100 {
+  width: calc(100% / 10);
+}
+
+.square81 {
+  width: calc(100% / 9);
+}
+
+.square49 {
+  width: calc(100% / 7);
 }

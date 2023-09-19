@@ -18,19 +18,27 @@
 
 
 // 1.
-const buttonGenerator = document.querySelector('.btn')
+const buttonGenerator = document.querySelector('.btn-custom')
+
+const levelSelect = document.querySelector('#level');
+
+// data
+let squareNumbers;
+const levels = [100, 81, 49];
 
 
 // 2.
 buttonGenerator.addEventListener('click', function(){
+
+  squareNumbers = levels[levelSelect.value]
   // 3
-  const contenitore = document.querySelector('.container')
-  contenitore.classList.remove('display-none')
+  const contenitore = document.querySelector('.game-wrapper')
+  contenitore.classList.remove('d-none')
 
   contenitore.innerHTML = '';
 
   // 4.
-  for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= squareNumbers; i++) {
     // 5.
     const square = createSquare(i);
     
@@ -53,11 +61,17 @@ buttonGenerator.addEventListener('click', function(){
 
 /************FUNZIONI************/ 
 function createSquare(index) {
-  const newSquare = document.createElement('div');
-  newSquare.className = 'square';
-  
-  newSquare.innerHTML = `<span>${index}</span>`;
-  return newSquare;
+  const square = document.createElement('div');
+  square.className = 'square';
+  square.classList.add('square' + squareNumbers)
+  square.innerHTML = `<span>${index}</span>`;
+  square._squareID = index;
+
+  return square;
+}
+
+function reset() {
+  contenitore.innerHTML = '';
 }
 
 
